@@ -1,4 +1,5 @@
 import numpy as np
+import random
 
 input_x = [
     [-0.2, 0.5],
@@ -39,6 +40,7 @@ def evaluate_model(weights, inputs, expected_outputs, activation_fn):
     predictions = [neuron.predict(x1, x2) for [x1, x2] in inputs]
     return np.array_equal(predictions, expected_outputs)
 
+# Egzistuojanti funkcija rasti geriausius svorius iteruojant per kiekvieną kombinaciją
 def find_weights(input_x, output_class, activation_fn):
     best_weights = []
 
@@ -57,10 +59,45 @@ def find_weights(input_x, output_class, activation_fn):
                     return best_weights
     return best_weights
 
-for activation_function in [ArtificialNeuron.threshold_activation, ArtificialNeuron.sigmoid_activation]:
-    best_weights = find_weights(input_x, output_class, activation_function)
+# Nauja funkcija rasti geriausius svorius atsitiktine paieška
+def find_weights_randomly(input_x, output_class, activation_fn, max_attempts=10000, desired_count=5):
+    best_weights = set()
 
-    print(f"\nBest weights and bias with {activation_function.__name__}:")
+    # Nustatomi svorių ir poslinkio intervalai
+    w0_values = np.arange(-0.6, 1, 0.1)
+    w1_values = np.arange(-1, 1, 0.1)
+    w2_values = np.arange(-1, 1, 0.1)
+
+    for _ in range(max_attempts):
+        # Atsitiktinis svorių pasirinkimas
+        w0 = random.choice(w0_values)
+        w1 = random.choice(w1_values)
+        w2 = random.choice(w2_values)
+
+        weights = (w0, w1, w2)
+        
+        # Tikriname, ar svoriai jau yra surasti
+        if weights in best_weights:
+            continue
+
+        if evaluate_model(weights, input_x, output_class, activation_fn):
+            best_weights.add(weights)
+            if len(best_weights) >= desired_count:
+                break
+
+    return list(best_weights)
+
+for activation_function in [ArtificialNeuron.threshold_activation, ArtificialNeuron.sigmoid_activation]:
+    print(f"\nFinding best weights with {activation_function.__name__} using exhaustive search:")
+    best_weights_exhaustive = find_weights(input_x, output_class, activation_function)
+
     print("w0    w1    w2")
-    for (w0, w1, w2) in best_weights:
+    for (w0, w1, w2) in best_weights_exhaustive:
+        print(f"{w0:.2f} {w1:.2f} {w2:.2f}")
+
+    print(f"\nFinding best weights with {activation_function.__name__} using random search:")
+    best_weights_random = find_weights_randomly(input_x, output_class, activation_function)
+
+    print("w0    w1    w2")
+    for (w0, w1, w2) in best_weights_random:
         print(f"{w0:.2f} {w1:.2f} {w2:.2f}")
