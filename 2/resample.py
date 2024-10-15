@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.utils import resample
 import os
 os.chdir('C:/Users/37067/Desktop/skaitmeninis intelektas/SI-lab/2')
-# Load the dataset from a CSV file (make sure to replace 'your_file.csv' with the actual file path)
+
 iris_data = pd.read_csv('iris-data.csv', delimiter=';')
 
 # Separate the classes based on the last column (assuming the last column contains the class labels)
