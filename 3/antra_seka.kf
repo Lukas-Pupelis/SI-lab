@@ -7,7 +7,7 @@
 				"loader" : {
 					"type" : "loader",
 					"class" : "weka.core.converters.ArffLoader",
-					"filePath" : "../../SI/Pijus_Zlatkus_3_uzd/iris_new.arff",
+					"filePath" : "iris_new.arff",
 					"useRelativePath" : true
 				},
 				"name" : "ArffLoader"
@@ -78,9 +78,9 @@
 				"classifier" : {
 					"type" : "optionHandler",
 					"class" : "weka.classifiers.functions.MultilayerPerceptron",
-					"options" : "-L 0.3 -M 0.2 -N 500 -V 0 -S 0 -E 20 -H a"
+					"options" : "-L 0.3 -M 0.2 -N 500 -V 0 -S 0 -E 20 -H \"4, 4\""
 				},
-				"loadClassifierFileName" : "C:/SI/Pijus_Zlatkus_3_uzd/trained__5_5_MultilayerPerceptron.model",
+				"loadClassifierFileName" : "C:/Users/37067/Desktop/skaitmeninis intelektas/SI-lab/3/trained__5_5_MultilayerPerceptron.model",
 				"name" : "MultilayerPerceptron",
 				"resetIncrementalClassifier" : false,
 				"updateIncrementalClassifier" : true
@@ -133,7 +133,7 @@
 			},
 			"connections" : {
 			},
-			"coordinates" : "787,128"
+			"coordinates" : "787,127"
 		},
 		{
 			"class" : "weka.knowledgeflow.steps.TextViewer",
@@ -142,7 +142,7 @@
 			},
 			"connections" : {
 			},
-			"coordinates" : "785,310"
+			"coordinates" : "785,309"
 		},
 		{
 			"class" : "weka.knowledgeflow.steps.ScatterPlotMatrix",

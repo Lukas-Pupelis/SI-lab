@@ -72,7 +72,8 @@
 			},
 			"connections" : {
 				"dataSet" : [
-					"Remove"
+					"Remove",
+					"ScatterPlotMatrix"
 				]
 			},
 			"coordinates" : "194,391"
@@ -151,6 +152,15 @@
 			"connections" : {
 			},
 			"coordinates" : "797,389"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.ScatterPlotMatrix",
+			"properties" : {
+				"name" : "ScatterPlotMatrix"
+			},
+			"connections" : {
+			},
+			"coordinates" : "198,115"
 		}
 	]
 }
