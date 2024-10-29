@@ -7,7 +7,7 @@
 				"loader" : {
 					"type" : "loader",
 					"class" : "weka.core.converters.ArffLoader",
-					"filePath" : "../../SI/Pijus_Zlatkus_3_uzd/iris_train_test.arff",
+					"filePath" : "iris_train_test.arff",
 					"useRelativePath" : true
 				},
 				"name" : "ArffLoader"
@@ -25,7 +25,7 @@
 				"loader" : {
 					"type" : "loader",
 					"class" : "weka.core.converters.ArffLoader",
-					"filePath" : "../../SI/Pijus_Zlatkus_3_uzd/iris_new.arff",
+					"filePath" : "iris_new.arff",
 					"useRelativePath" : true
 				},
 				"name" : "ArffLoader2"
@@ -155,7 +155,7 @@
 					"TextViewer2"
 				]
 			},
-			"coordinates" : "597,35"
+			"coordinates" : "590,7"
 		},
 		{
 			"class" : "weka.knowledgeflow.steps.TextViewer",
@@ -173,7 +173,7 @@
 			},
 			"connections" : {
 			},
-			"coordinates" : "726,35"
+			"coordinates" : "765,41"
 		}
 	]
 }
