@@ -7,7 +7,7 @@
 				"loader" : {
 					"type" : "loader",
 					"class" : "weka.core.converters.ArffLoader",
-					"filePath" : "../../SI/Pijus_Zlatkus_3_uzd/iris_train_test.arff",
+					"filePath" : "iris_train_test.arff",
 					"useRelativePath" : true
 				},
 				"name" : "ArffLoader"
@@ -108,7 +108,7 @@
 				"includeRelationNameInFilename" : false,
 				"incrementalSaveSchedule" : 0,
 				"name" : "SerializedModelSaver",
-				"outputDirectory" : "C:/SI/Pijus_Zlatkus_3_uzd"
+				"outputDirectory" : "C:/Users/37067/Desktop/skaitmeninis intelektas/SI-lab/3"
 			},
 			"connections" : {
 			},
